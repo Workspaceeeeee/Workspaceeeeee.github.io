@@ -318,6 +318,23 @@
       font-size:14px;
     }
 
+    /* Portfolio gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:14px;
+    }
+    .gallery img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
+    }
+
     /* MODAL */
     .modal{
       position:fixed;
@@ -369,6 +386,8 @@
       .hero__title{ font-size: 36px; }
       .menu{ gap:14px; }
       .modalGrid{ grid-template-columns: 1fr; }
+      .gallery{ grid-template-columns: 1fr; }
+      .gallery img{ height:240px; }
     }
   </style>
 </head>
@@ -628,6 +647,12 @@
           </ul>
         </div>
       </div>
+
+      <div class="gallery" aria-label="Vega work visuals">
+        <img src="assets/images/vega-1.png" alt="Vega work 1">
+        <img src="assets/images/vega-2.png" alt="Vega work 2">
+        <img src="assets/images/vega-3.jpeg" alt="Vega work 3">
+      </div>
     </div>
   </div>
 
@@ -656,6 +681,11 @@
           </ul>
         </div>
       </div>
+
+      <div class="gallery" aria-label="Bhati work visuals">
+        <img src="assets/images/bhati-1.png" alt="Bhati work 1">
+        <img src="assets/images/bhati-2.png" alt="Bhati work 2">
+      </div>
     </div>
   </div>
 
@@ -683,6 +713,15 @@
             <li>More structured influencer workflow</li>
           </ul>
         </div>
+      </div>
+
+      <div class="gallery" aria-label="Potdar and BSC work visuals">
+        <img src="assets/images/potdar-1.png" alt="Potdar work 1">
+        <img src="assets/images/potdar-2.png" alt="Potdar work 2">
+        <img src="assets/images/potdar-3.jpeg" alt="Potdar work 3">
+        <img src="assets/images/bsc-1.png" alt="BSC work 1">
+        <img src="assets/images/bsc-2.png" alt="BSC work 2">
+        <img src="assets/images/bsc-3.jpeg" alt="BSC work 3">
       </div>
     </div>
   </div>
