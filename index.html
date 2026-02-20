@@ -4,10 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jessica D’souza | Digital Marketing Portfolio</title>
-  <meta name="description" content="Jessica D’souza — Creative & Digital Marketing Strategist. Campaigns, content systems, performance-led execution." />
+  <meta name="description" content="Creative & Digital Marketing Strategist. Campaigns, content systems, performance-led execution." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#0b0d12;
@@ -17,18 +19,20 @@
       --muted:#a8afc3;
       --line:rgba(255,255,255,.10);
       --accent:#6ee7ff;
-      --shadow: 0 14px 50px rgba(0,0,0,.38);
+      --shadow: 0 16px 60px rgba(0,0,0,.45);
       --radius: 18px;
-      --max: 1080px;
+      --max: 1100px;
     }
+
     *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+    html,body{ height:100%; scroll-behavior:smooth; }
     body{
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:
-        radial-gradient(900px 600px at 20% -10%, rgba(110,231,255,.12), transparent 60%),
-        radial-gradient(900px 600px at 90% 10%, rgba(139,92,246,.10), transparent 55%),
+        radial-gradient(900px 600px at 12% -10%, rgba(110,231,255,.12), transparent 60%),
+        radial-gradient(900px 600px at 90% 5%, rgba(139,92,246,.10), transparent 55%),
+        radial-gradient(700px 500px at 40% 110%, rgba(16,185,129,.06), transparent 55%),
         var(--bg);
       color:var(--text);
       line-height:1.55;
@@ -38,26 +42,26 @@
 
     /* NAV */
     .nav{
-      position:sticky; top:0; z-index:20;
+      position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
       background: rgba(11,13,18,.65);
       border-bottom: 1px solid var(--line);
     }
     .nav__inner{
-      height:72px;
+      height:74px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:14px;
     }
-    .brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px; }
     .brand__dot{
       width:10px; height:10px; border-radius:999px;
       background: var(--accent);
       box-shadow: 0 0 0 6px rgba(110,231,255,.12);
     }
     .menu{ display:flex; align-items:center; gap:18px; }
-    .menu a{ color:var(--muted); font-weight:700; font-size:14px; }
+    .menu a{ color:var(--muted); font-weight:750; font-size:14px; }
     .menu a:hover{ color:var(--text); }
 
     /* BUTTONS */
@@ -68,61 +72,76 @@
       border:1px solid rgba(110,231,255,.25);
       background: rgba(110,231,255,.12);
       color:var(--text);
-      font-weight:800;
+      font-weight:850;
       transition: transform .15s ease, background .15s ease, border-color .15s ease;
       white-space:nowrap;
     }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(110,231,255,.45); background: rgba(110,231,255,.16); }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(110,231,255,.45);
+      background: rgba(110,231,255,.16);
+    }
     .btn--ghost{
       background: transparent;
       border-color: var(--line);
       color: var(--text);
     }
     .btn--sm{ padding:10px 12px; font-size:14px; }
+    .btn--full{ width:100%; }
 
     /* HERO */
-    .hero{ padding:68px 0 28px; }
+    .hero{ padding:70px 0 26px; }
     .hero__grid{
       display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:22px;
+      grid-template-columns: 1.35fr .65fr;
+      gap:18px;
       align-items:stretch;
     }
     .badge{
-      display:inline-block;
+      display:inline-flex; align-items:center; gap:10px;
       padding:8px 12px;
       border-radius:999px;
       border:1px solid var(--line);
       color: var(--muted);
-      font-weight:700;
+      font-weight:750;
       font-size:13px;
       background: rgba(255,255,255,.03);
     }
-    .hero__title{
-      margin:14px 0 10px;
-      font-size:46px;
-      line-height:1.08;
-      letter-spacing:-.9px;
+    .badge i{
+      width:7px; height:7px; border-radius:99px; display:inline-block;
+      background: rgba(110,231,255,.9);
+      box-shadow: 0 0 0 6px rgba(110,231,255,.12);
     }
-    .hero__sub{ margin:0; color:var(--muted); font-size:16px; max-width:60ch; }
+    .hero__title{
+      margin:16px 0 10px;
+      font-size:48px;
+      line-height:1.07;
+      letter-spacing:-1px;
+    }
+    .hero__sub{
+      margin:0;
+      color:var(--muted);
+      font-size:16.5px;
+      max-width:62ch;
+    }
     .hero__cta{ display:flex; gap:12px; margin-top:18px; flex-wrap:wrap; }
 
-    .meta{
+    .stats{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap:10px;
       margin-top:18px;
     }
-    .metaCard{
+    .stat{
       border:1px solid var(--line);
       background: rgba(255,255,255,.03);
       border-radius: 14px;
       padding:12px;
     }
-    .metaCard__label{ margin:0; color:var(--muted); font-weight:700; font-size:12px; }
-    .metaCard__value{ margin:6px 0 0; font-weight:800; font-size:13px; }
+    .stat__kpi{ margin:0; font-weight:900; font-size:15px; letter-spacing:-.2px; }
+    .stat__lbl{ margin:6px 0 0; color:var(--muted); font-weight:700; font-size:12px; }
 
-    .heroPanel{
+    .sideCard{
       border:1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
       border-radius: var(--radius);
@@ -133,16 +152,39 @@
       justify-content:space-between;
       gap:14px;
     }
-    .heroPanel__title{ margin:0; font-weight:900; letter-spacing:-.2px; }
-    .heroPanel__text{ margin:8px 0 0; color:var(--muted); }
-    .ticks{ display:grid; gap:10px; }
-    .tick{
+    .sideCard h3{ margin:0; font-size:16px; letter-spacing:-.2px; }
+    .sideCard p{ margin:0; color:var(--muted); }
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; }
+    .chip{
       border:1px solid var(--line);
       background: rgba(255,255,255,.03);
-      border-radius: 12px;
+      border-radius: 999px;
       padding:10px 12px;
-      font-weight:750;
-      color: var(--text);
+      color: var(--muted);
+      font-weight:850;
+      font-size:13px;
+    }
+
+    /* BRANDS STRIP */
+    .brandsStrip{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      border-radius: var(--radius);
+      padding:14px;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px;
+    }
+    .brandsStrip span{
+      color: var(--muted);
+      font-weight:850;
+      font-size:13px;
+      border:1px dashed rgba(255,255,255,.12);
+      padding:10px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.08);
     }
 
     /* SECTIONS */
@@ -162,7 +204,7 @@
     h2{ margin:0; font-size:28px; letter-spacing:-.4px; }
     .sectionHead p{ margin:0; color:var(--muted); max-width:62ch; }
 
-    /* CARDS */
+    /* WORK CARDS */
     .grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -177,15 +219,38 @@
       display:flex;
       flex-direction:column;
       gap:12px;
-      min-height: 240px;
+      min-height: 260px;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(110,231,255,.28);
+      background: rgba(255,255,255,.04);
     }
     .card h3{ margin:0; font-size:17px; letter-spacing:-.2px; }
-    .tag{ margin:6px 0 0; color:var(--muted); font-weight:700; font-size:13px; }
+    .tag{ margin:6px 0 0; color:var(--muted); font-weight:750; font-size:13px; }
     .card p{ margin:0; color:var(--muted); }
     .bullets{ margin:0; padding-left:18px; }
     .bullets li{ margin:6px 0; color:var(--muted); }
 
-    /* ABOUT + PANEL */
+    .detailsBtn{
+      margin-top:auto;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      border-radius: 12px;
+      padding:12px 14px;
+      font-weight:850;
+      cursor:pointer;
+      color: var(--text);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .detailsBtn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(110,231,255,.3);
+      background: rgba(110,231,255,.08);
+    }
+
+    /* ABOUT */
     .twoCol{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
@@ -193,6 +258,7 @@
       align-items:start;
     }
     .lead{ font-size:18px; margin-top:10px; }
+    .small{ color: var(--muted); font-weight:650; font-size:14px; }
     .panel{
       border:1px solid var(--line);
       background: rgba(17,21,37,.55);
@@ -209,7 +275,7 @@
       border-radius: 12px;
       padding:10px 12px;
       color: var(--muted);
-      font-weight:700;
+      font-weight:750;
     }
     .steps li span{
       width:26px; height:26px; border-radius:10px;
@@ -217,24 +283,7 @@
       background: rgba(110,231,255,.12);
       border:1px solid rgba(110,231,255,.25);
       color: var(--text);
-      font-weight:900;
-    }
-
-    /* BRAND STRIP */
-    .brands{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
-    .brandPill{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      border-radius: 999px;
-      padding:10px 12px;
-      color: var(--muted);
-      font-weight:800;
-      font-size:13px;
+      font-weight:950;
     }
 
     /* CONTACT */
@@ -254,7 +303,6 @@
       gap:10px;
       box-shadow: var(--shadow);
     }
-    .small{ color: var(--muted); font-weight:650; font-size:14px; }
 
     /* FOOTER */
     .footer{ padding:26px 0; }
@@ -266,17 +314,61 @@
       border-top:1px solid var(--line);
       padding-top:18px;
       color: var(--muted);
-      font-weight:700;
+      font-weight:750;
       font-size:14px;
     }
+
+    /* MODAL */
+    .modal{
+      position:fixed;
+      inset:0;
+      display:none;
+      z-index:100;
+    }
+    .modal.is-open{ display:block; }
+    .backdrop{
+      position:absolute; inset:0;
+      background: rgba(0,0,0,.6);
+      backdrop-filter: blur(8px);
+    }
+    .modalPanel{
+      position:relative;
+      width:min(980px, calc(100% - 40px));
+      margin: 8vh auto 0;
+      border:1px solid var(--line);
+      background: rgba(17,21,37,.95);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .close{
+      position:absolute;
+      right:14px; top:14px;
+      width:38px; height:38px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      cursor:pointer;
+      font-weight:900;
+    }
+    .modalGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+    .modalPanel h4{ margin:12px 0 6px; }
+    .modalPanel p{ color: var(--muted); margin:0; }
 
     @media (max-width: 900px){
       .hero__grid{ grid-template-columns: 1fr; }
       .grid{ grid-template-columns: 1fr; }
       .twoCol{ grid-template-columns: 1fr; }
-      .meta{ grid-template-columns: 1fr; }
+      .stats{ grid-template-columns: 1fr; }
       .hero__title{ font-size: 36px; }
       .menu{ gap:14px; }
+      .modalGrid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -303,45 +395,57 @@
     <section class="hero">
       <div class="container hero__grid">
         <div>
-          <p class="badge">Creative & Digital Marketing Strategist</p>
-          <h1 class="hero__title">I build campaigns that look premium and perform better.</h1>
+          <span class="badge"><i></i> Creative & Digital Marketing Strategist</span>
+          <h1 class="hero__title">Strategy-led marketing with clean execution and measurable outcomes.</h1>
           <p class="hero__sub">
-            I combine storytelling, social strategy and performance-led execution for pan-India brands. From concept to calendar to reporting, I bring structure to creative.
+            I build content systems, campaign narratives, and performance-led creatives for pan-India brands across automotive, jewellery, fashion, and tech.
           </p>
 
           <div class="hero__cta">
-            <a class="btn" href="#work">View Work</a>
-            <a class="btn btn--ghost" href="#contact">Contact</a>
+            <a class="btn" href="#work">View Case Studies</a>
+            <a class="btn btn--ghost" href="#contact">Get in touch</a>
           </div>
 
-          <div class="meta" aria-label="Quick highlights">
-            <div class="metaCard">
-              <p class="metaCard__label">Focus</p>
-              <p class="metaCard__value">Content + Performance</p>
+          <div class="stats" aria-label="Quick highlights">
+            <div class="stat">
+              <p class="stat__kpi">5+ brands</p>
+              <p class="stat__lbl">Handled across categories</p>
             </div>
-            <div class="metaCard">
-              <p class="metaCard__label">Strength</p>
-              <p class="metaCard__value">Strategy + Execution</p>
+            <div class="stat">
+              <p class="stat__kpi">Concept → execution</p>
+              <p class="stat__lbl">End-to-end ownership</p>
             </div>
-            <div class="metaCard">
-              <p class="metaCard__label">Experience</p>
-              <p class="metaCard__value">Pan-India Brands</p>
+            <div class="stat">
+              <p class="stat__kpi">Reporting mindset</p>
+              <p class="stat__lbl">Insights + iteration</p>
             </div>
+          </div>
+
+          <div class="brandsStrip" aria-label="Brands">
+            <span>Vega Helmets</span>
+            <span>Potdar Brothers</span>
+            <span>JioThings</span>
+            <span>BSC</span>
+            <span>Bhati</span>
           </div>
         </div>
 
-        <aside class="heroPanel">
+        <aside class="sideCard">
           <div>
-            <p class="heroPanel__title">What you’ll see here</p>
-            <p class="heroPanel__text">Selected work, case-study style breakdowns, and how I approach digital marketing.</p>
+            <h3>What I do best</h3>
+            <p>Not just ideas. Systems, rollouts, and work that ships on time.</p>
           </div>
 
-          <div class="ticks">
-            <div class="tick">✅ Campaign thinking (Hero, Hub, Hygiene)</div>
-            <div class="tick">✅ Performance creatives for paid</div>
-            <div class="tick">✅ Monthly analysis + reporting</div>
-            <div class="tick">✅ Influencer coordination</div>
+          <div class="chips" aria-label="Capabilities">
+            <span class="chip">Campaign Planning</span>
+            <span class="chip">Content Strategy</span>
+            <span class="chip">Performance Creatives</span>
+            <span class="chip">Influencer Coordination</span>
+            <span class="chip">Monthly Reporting</span>
+            <span class="chip">Stakeholder Management</span>
           </div>
+
+          <a class="btn btn--ghost" href="#about">How I work →</a>
         </aside>
       </div>
     </section>
@@ -351,7 +455,7 @@
       <div class="container">
         <div class="sectionHead">
           <h2>Selected Work</h2>
-          <p>Short, clear case studies. Objective, approach, execution, outcome.</p>
+          <p>Tap “View Details” to see objective, strategy, execution and outcomes.</p>
         </div>
 
         <div class="grid">
@@ -360,38 +464,41 @@
               <h3>Multi-brand Content & Campaign Execution</h3>
               <p class="tag">Strategy • Calendars • Execution</p>
             </div>
-            <p>Led end-to-end content and campaigns across multiple categories, ensuring consistency and brand voice across platforms.</p>
+            <p>Created monthly content systems and campaign rollouts across multiple categories while keeping brand voice consistent.</p>
             <ul class="bullets">
-              <li>Built structured monthly content plans</li>
-              <li>Created campaign concepts and narratives</li>
-              <li>Coordinated with teams for timely output</li>
+              <li>Hero, Hub, Hygiene approach</li>
+              <li>Content calendars + copy</li>
+              <li>Cross-team coordination</li>
             </ul>
+            <button class="detailsBtn" data-modal="m1">View Details</button>
           </article>
 
           <article class="card">
             <div>
               <h3>Performance-led Creative Support</h3>
-              <p class="tag">Paid Creatives • Insights • Optimization</p>
+              <p class="tag">Paid Creatives • Insights • Iteration</p>
             </div>
-            <p>Developed performance-focused creatives to support paid campaigns, aligning storytelling with conversion intent.</p>
+            <p>Built performance-focused creatives for paid campaigns, aligning storytelling with conversion intent and learnings.</p>
             <ul class="bullets">
-              <li>Hook-led creative direction</li>
-              <li>Iterated based on what worked</li>
-              <li>Supported reporting and learnings</li>
+              <li>Hook-led creative angles</li>
+              <li>Format and placement awareness</li>
+              <li>Monthly reporting inputs</li>
             </ul>
+            <button class="detailsBtn" data-modal="m2">View Details</button>
           </article>
 
           <article class="card">
             <div>
               <h3>Influencer Strategy & Coordination</h3>
-              <p class="tag">Creators • Deliverables • Outcomes</p>
+              <p class="tag">Creators • Deliverables • Review</p>
             </div>
-            <p>Identified creators, coordinated deliverables, and reviewed performance outcomes to improve reach and visibility.</p>
+            <p>Identified creators, coordinated deliverables, and reviewed outcomes to improve reach and social visibility.</p>
             <ul class="bullets">
-              <li>Creator shortlist and outreach</li>
+              <li>Creator shortlist</li>
               <li>Deliverables tracking</li>
               <li>Post-campaign review</li>
             </ul>
+            <button class="detailsBtn" data-modal="m3">View Details</button>
           </article>
         </div>
       </div>
@@ -403,28 +510,20 @@
         <div>
           <h2>About</h2>
           <p class="lead">
-            I’m Jessica, a results-oriented Creative & Digital Marketing Strategist working across content, campaigns, and digital initiatives for pan-India brands.
+            I’m Jessica, a results-oriented Creative & Digital Marketing Strategist with experience leading content, campaigns and digital initiatives for pan-India brands.
           </p>
           <p class="small">
-            I combine creative thinking, brand storytelling, and social media strategy with practical digital execution. I enjoy taking ideas from concept to rollout, collaborating with teams, and building marketing that resonates across diverse audiences.
+            I combine creative thinking, brand storytelling and social media strategy with practical execution. I enjoy taking ideas from concept to rollout, collaborating with teams, and building work that resonates across diverse audiences.
           </p>
-
-          <div class="brands" aria-label="Brands handled">
-            <span class="brandPill">Vega Helmets</span>
-            <span class="brandPill">Potdar Brothers</span>
-            <span class="brandPill">JioThings</span>
-            <span class="brandPill">BSC</span>
-            <span class="brandPill">Bhati</span>
-          </div>
         </div>
 
         <div class="panel">
           <h3>My approach</h3>
           <ol class="steps">
-            <li><span>1</span> Understand audience and intent</li>
-            <li><span>2</span> Build campaign narrative + buckets</li>
+            <li><span>1</span> Understand audience + intent</li>
+            <li><span>2</span> Build narrative + content buckets</li>
             <li><span>3</span> Execute consistently across formats</li>
-            <li><span>4</span> Analyse what worked and iterate</li>
+            <li><span>4</span> Analyse, report, iterate</li>
           </ol>
         </div>
       </div>
@@ -435,42 +534,42 @@
       <div class="container">
         <div class="sectionHead">
           <h2>Skills</h2>
-          <p>Clear buckets. No fluff.</p>
+          <p>Organized by how work actually happens.</p>
         </div>
 
         <div class="grid">
           <article class="card">
             <div>
               <h3>Content & Social Strategy</h3>
-              <p class="tag">Calendars • Copy • Campaign Buckets</p>
+              <p class="tag">Calendars • Copy • Brand voice</p>
             </div>
             <ul class="bullets">
               <li>Content planning and execution</li>
-              <li>Hero, Hub, Hygiene frameworks</li>
-              <li>Brand voice and storytelling</li>
+              <li>Hero, Hub, Hygiene systems</li>
+              <li>Storytelling + clarity in copy</li>
             </ul>
           </article>
 
           <article class="card">
             <div>
               <h3>Campaign Planning</h3>
-              <p class="tag">Ideation • Rollout • Coordination</p>
+              <p class="tag">Ideation • Rollout • Stakeholders</p>
             </div>
             <ul class="bullets">
-              <li>Campaign concepts and themes</li>
-              <li>Stakeholder coordination</li>
-              <li>End-to-end execution</li>
+              <li>Campaign themes and concepts</li>
+              <li>Coordination with design and teams</li>
+              <li>Timely delivery and approvals</li>
             </ul>
           </article>
 
           <article class="card">
             <div>
               <h3>Performance & Reporting</h3>
-              <p class="tag">Insights • Optimization • Learnings</p>
+              <p class="tag">Creative support • Insights • Review</p>
             </div>
             <ul class="bullets">
-              <li>Performance-focused creatives</li>
-              <li>Monthly reporting and insights</li>
+              <li>Performance-led creatives</li>
+              <li>Monthly analysis + learnings</li>
               <li>Influencer outcomes review</li>
             </ul>
           </article>
@@ -484,12 +583,12 @@
         <div>
           <h2>Contact</h2>
           <p class="lead">Want to collaborate or connect?</p>
-          <p class="small">Email works best. LinkedIn for quick hellos.</p>
+          <p class="small">Email works best. Add LinkedIn for quick hellos.</p>
         </div>
 
         <div class="contactBox">
-          <a class="btn" href="mailto:jessicadsouza30072003@gmail.com">Email me</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn btn--full" href="mailto:jessicadsouza30072003@gmail.com">Email me</a>
+          <a class="btn btn--ghost btn--full" href="#" target="_blank" rel="noreferrer">Add LinkedIn link here</a>
           <p class="small">Phone: 9353788266</p>
         </div>
       </div>
@@ -503,8 +602,125 @@
     </footer>
   </main>
 
+  <!-- MODALS -->
+  <div class="modal" id="m1" aria-hidden="true">
+    <div class="backdrop" data-close></div>
+    <div class="modalPanel" role="dialog" aria-modal="true" aria-label="Case study details">
+      <button class="close" data-close aria-label="Close">✕</button>
+      <h3>Multi-brand Content & Campaign Execution</h3>
+      <div class="modalGrid">
+        <div>
+          <h4>Objective</h4>
+          <p>Build consistent monthly content and campaigns across brands while maintaining voice and quality.</p>
+          <h4>What I did</h4>
+          <ul class="bullets">
+            <li>Planned monthly content calendars</li>
+            <li>Developed hero, hub, hygiene concepts</li>
+            <li>Wrote copy and supported execution with teams</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Outcome</h4>
+          <ul class="bullets">
+            <li>Improved consistency and engagement quality</li>
+            <li>Clearer themes and stronger content structure</li>
+            <li>Smoother coordination and timely delivery</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="m2" aria-hidden="true">
+    <div class="backdrop" data-close></div>
+    <div class="modalPanel" role="dialog" aria-modal="true" aria-label="Case study details">
+      <button class="close" data-close aria-label="Close">✕</button>
+      <h3>Performance-led Creative Support</h3>
+      <div class="modalGrid">
+        <div>
+          <h4>Objective</h4>
+          <p>Support paid campaigns with creatives that align with intent and drive better results.</p>
+          <h4>What I did</h4>
+          <ul class="bullets">
+            <li>Built hook-led creative angles</li>
+            <li>Optimized formats based on what performed</li>
+            <li>Shared learnings through reporting inputs</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Outcome</h4>
+          <ul class="bullets">
+            <li>Stronger alignment between content and conversions</li>
+            <li>More structured creative direction for paid</li>
+            <li>Clearer feedback loop from results to content</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="m3" aria-hidden="true">
+    <div class="backdrop" data-close></div>
+    <div class="modalPanel" role="dialog" aria-modal="true" aria-label="Case study details">
+      <button class="close" data-close aria-label="Close">✕</button>
+      <h3>Influencer Strategy & Coordination</h3>
+      <div class="modalGrid">
+        <div>
+          <h4>Objective</h4>
+          <p>Increase reach and visibility using creator-led content aligned to brand goals.</p>
+          <h4>What I did</h4>
+          <ul class="bullets">
+            <li>Identified and shortlisted creators</li>
+            <li>Coordinated deliverables and timelines</li>
+            <li>Reviewed outcomes and learnings</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Outcome</h4>
+          <ul class="bullets">
+            <li>Expanded visibility through creator content</li>
+            <li>Better clarity on deliverables and execution</li>
+            <li>More structured influencer workflow</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Modal logic
+    const openBtns = document.querySelectorAll("[data-modal]");
+    const modals = document.querySelectorAll(".modal");
+
+    function openModal(id){
+      const m = document.getElementById(id);
+      if(!m) return;
+      m.classList.add("is-open");
+      m.setAttribute("aria-hidden","false");
+      document.body.style.overflow = "hidden";
+    }
+    function closeModal(m){
+      m.classList.remove("is-open");
+      m.setAttribute("aria-hidden","true");
+      document.body.style.overflow = "";
+    }
+
+    openBtns.forEach(b => b.addEventListener("click", () => openModal(b.dataset.modal)));
+
+    modals.forEach(m => {
+      m.addEventListener("click", (e) => {
+        if (e.target.matches("[data-close]")) closeModal(m);
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape"){
+        document.querySelectorAll(".modal.is-open").forEach(closeModal);
+      }
+    });
   </script>
 </body>
 </html>
